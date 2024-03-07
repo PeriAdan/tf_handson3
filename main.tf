@@ -107,3 +107,44 @@ module "cert" {
 }
 
 
+module "tg" {
+  source = "github.com/russgazin/b11-modules.git//tg_module"
+
+  tg_name     = "${terraform.workspace}-tg"
+  tg_port     = 80
+  tg_protocol = "HTTP"
+  tg_vpc_id   = module.vpc.id
+  tg_tag      = "${terraform.workspace}_tg"
+  instance_ids = [
+    module.instances["${terraform.workspace}_instance_pub_1a"].id,
+    module.instances["${terraform.workspace}_instance_pub_1b"].id,
+  ]
+}
+
+
+module "alb" {
+  source = "github.com/russgazin/b11-modules.git//alb_module"
+
+  name               = "${terraform.workspace}-alb"
+  internal           = false
+  load_balancer_type = "application"
+  security_groups    = [module.alb_sg.id]
+  subnets = [
+    module.subnets["public_1a"].id,
+    module.subnets["public_1b"].id
+  ]
+
+  alb_tag          = "${terraform.workspace}_alb"
+  certificate_arn  = module.cert.arn
+  target_group_arn = module.tg.tg_arn
+}
+
+module "cname" {
+  source = "git@github.com:PeriAdan/my_modules.git//dns"
+
+  zone_id = data.aws_route53_zone.my_zone.id
+  name    = "${terraform.workspace}.periadan.com"
+  type    = "CNAME"
+  ttl     = 60
+  records = [module.alb.dns_name]
+}
