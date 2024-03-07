@@ -108,7 +108,7 @@ module "cert" {
 
 
 module "tg" {
-  source = "github.com/russgazin/b11-modules.git//tg_module"
+  source = "git@github.com:PeriAdan/my_modules.git//tg"
 
   tg_name     = "${terraform.workspace}-tg"
   tg_port     = 80
@@ -123,7 +123,7 @@ module "tg" {
 
 
 module "alb" {
-  source = "github.com/russgazin/b11-modules.git//alb_module"
+  source = "git@github.com:PeriAdan/my_modules.git//alb"
 
   name               = "${terraform.workspace}-alb"
   internal           = false
