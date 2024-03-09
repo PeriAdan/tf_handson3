@@ -14,7 +14,7 @@ subnet_for_each = {
 natgw_tag = "prod_natgtw"
 
 ec2_sg_rules = {
-  SSH_from_www   = ["ingress", 22, 22, "TCP", "0.0.0.0/0"]
+  SSH_from_www  = ["ingress", 22, 22, "TCP", "0.0.0.0/0"]
   http_from_www = ["ingress", 80, 80, "TCP", "0.0.0.0/0"]
   #http_from_www  = ["ingress", 80, 80, "tcp", "sg-09fa2e56e22b52acb"]
   traffic_to_www = ["egress", 0, 0, "-1", "0.0.0.0/0"]

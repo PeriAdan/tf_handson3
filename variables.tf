@@ -39,3 +39,7 @@ variable "subject_alternative_names" {
 variable "domain_name" {
 
 }
+
+variable "rds_sg_rules" {
+
+}

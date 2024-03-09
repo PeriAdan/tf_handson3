@@ -148,3 +148,13 @@ module "cname" {
   ttl     = 60
   records = [module.alb.dns_name]
 }
+
+
+module "rds_sg" {
+  source      = "git@github.com:PeriAdan/my_modules.git//sg"
+  name        = "${terraform.workspace}-rds_sg"
+  description = "${terraform.workspace}-rds_sg"
+  vpc_id      = module.vpc.id
+  sg_tag      = "${terraform.workspace}-rds_sg"
+  sg_rules    = var.rds_sg_rules
+}

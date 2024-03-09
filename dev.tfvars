@@ -15,7 +15,7 @@ natgw_tag = "dev_natgtw"
 
 ec2_sg_rules = {
   SSH_from_www   = ["ingress", 22, 22, "TCP", "0.0.0.0/0"]
-  http_from_www  = ["ingress", 80, 80, "tcp", "sg-09fa2e56e22b52acb"]
+  http_from_www  = ["ingress", 80, 80, "tcp", "sg-02bbedd769472bea0"]
   traffic_to_www = ["egress", 0, 0, "-1", "0.0.0.0/0"]
 }
 
@@ -26,6 +26,12 @@ alb_sg_rules = {
   traffic_to_www = ["egress", 0, 0, "-1", "0.0.0.0/0"]
   https_from_www = ["ingress", 443, 443, "TCP", "0.0.0.0/0"]
 }
+
+rds_sg_rules = {
+  mysql_from_www  = ["ingress", 3306, 3306, "TCP", "0.0.0.0/0"]
+  outbound_to_www = ["egress", 0, 0, "-1", "0.0.0.0/0"]
+}
+
 
 domain_name               = "periadan.com"
 subject_alternative_names = ["*.periadan.com"]
