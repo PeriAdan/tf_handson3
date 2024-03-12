@@ -1,0 +1,226 @@
+2024-03-09T02:08:02.197-0800 [INFO]  Terraform version: 1.7.4
+2024-03-09T02:08:02.198-0800 [DEBUG] using github.com/hashicorp/go-tfe v1.41.0
+2024-03-09T02:08:02.198-0800 [DEBUG] using github.com/hashicorp/hcl/v2 v2.19.1
+2024-03-09T02:08:02.198-0800 [DEBUG] using github.com/hashicorp/terraform-svchost v0.1.1
+2024-03-09T02:08:02.198-0800 [DEBUG] using github.com/zclconf/go-cty v1.14.1
+2024-03-09T02:08:02.198-0800 [INFO]  Go runtime version: go1.21.5
+2024-03-09T02:08:02.198-0800 [INFO]  CLI args: []string{"terraform", "destroy", "-auto-approve"}
+2024-03-09T02:08:02.198-0800 [DEBUG] Attempting to open CLI config file: /Users/periadanova/.terraformrc
+2024-03-09T02:08:02.198-0800 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2024-03-09T02:08:02.199-0800 [DEBUG] ignoring non-existing provider search directory terraform.d/plugins
+2024-03-09T02:08:02.199-0800 [DEBUG] ignoring non-existing provider search directory /Users/periadanova/.terraform.d/plugins
+2024-03-09T02:08:02.199-0800 [DEBUG] ignoring non-existing provider search directory /Users/periadanova/Library/Application Support/io.terraform/plugins
+2024-03-09T02:08:02.199-0800 [DEBUG] ignoring non-existing provider search directory /Library/Application Support/io.terraform/plugins
+2024-03-09T02:08:02.199-0800 [INFO]  CLI command args: []string{"destroy", "-auto-approve"}
+2024-03-09T02:08:02.205-0800 [DEBUG] backend-s3.aws-base: Resolving credentials provider: tf_backend.operation=Configure tf_backend.req_id=2062a45f-3b1b-cfde-969b-9a2d1f6f933f tf_backend.s3.bucket=terraformperi tf_backend.s3.path=terraform-hd
+2024-03-09T02:08:02.205-0800 [DEBUG] backend-s3.aws-base: Loading configuration: tf_backend.operation=Configure tf_backend.req_id=2062a45f-3b1b-cfde-969b-9a2d1f6f933f tf_backend.s3.bucket=terraformperi tf_backend.s3.path=terraform-hd
+2024-03-09T02:08:02.205-0800 [DEBUG] backend-s3.aws-base: Retrieving credentials: tf_backend.operation=Configure tf_backend.req_id=2062a45f-3b1b-cfde-969b-9a2d1f6f933f tf_backend.s3.bucket=terraformperi tf_backend.s3.path=terraform-hd
+2024-03-09T02:08:02.205-0800 [INFO]  backend-s3.aws-base: Retrieved credentials: tf_backend.operation=Configure tf_backend.req_id=2062a45f-3b1b-cfde-969b-9a2d1f6f933f tf_backend.s3.bucket=terraformperi tf_backend.s3.path=terraform-hd tf_aws.credentials_source="SharedConfigCredentials: /Users/periadanova/.aws/credentials"
+2024-03-09T02:08:02.205-0800 [DEBUG] backend-s3.aws-base: Loading configuration: tf_backend.operation=Configure tf_backend.req_id=2062a45f-3b1b-cfde-969b-9a2d1f6f933f tf_backend.s3.bucket=terraformperi tf_backend.s3.path=terraform-hd
+2024-03-09T02:08:02.205-0800 [DEBUG] backend-s3.aws-base: Retrieving caller identity from STS: tf_backend.operation=Configure tf_backend.req_id=2062a45f-3b1b-cfde-969b-9a2d1f6f933f tf_backend.s3.bucket=terraformperi tf_backend.s3.path=terraform-hd
+2024-03-09T02:08:02.205-0800 [DEBUG] backend-s3.aws-base: HTTP Request Sent: aws.region=us-east-1 rpc.method=GetCallerIdentity rpc.service=STS rpc.system=aws-api tf_aws.sdk=aws-sdk-go-v2 tf_aws.signing_region="" tf_backend.operation=Configure tf_backend.req_id=2062a45f-3b1b-cfde-969b-9a2d1f6f933f tf_backend.s3.bucket=terraformperi tf_backend.s3.path=terraform-hd
+  http.request.body=
+  | Action=GetCallerIdentity&Version=2011-06-15
+   http.method=POST http.user_agent="APN/1.0 HashiCorp/1.0 Terraform/1.7.4 (+https://www.terraform.io) aws-sdk-go-v2/1.24.0 os/macos lang/go#1.21.5 md/GOOS#darwin md/GOARCH#arm64 api/sts#1.26.5" http.request_content_length=43 http.request.header.authorization="AWS4-HMAC-SHA256 Credential=AKIA************EVXE/20240309/us-east-1/sts/aws4_request, SignedHeaders=amz-sdk-invocation-id;content-length;content-type;host;x-amz-date, Signature=*****" http.request.header.content_type=application/x-www-form-urlencoded http.url=https://sts.us-east-1.amazonaws.com/ net.peer.name=sts.us-east-1.amazonaws.com http.request.header.amz_sdk_request="attempt=1; max=5" http.request.header.amz_sdk_invocation_id=92c953b4-1ad5-4d2a-abfd-8286827e2217 http.request.header.x_amz_date=20240309T100802Z
+2024-03-09T02:08:02.760-0800 [DEBUG] backend-s3.aws-base: HTTP Response Received: aws.region=us-east-1 rpc.method=GetCallerIdentity rpc.service=STS rpc.system=aws-api tf_aws.sdk=aws-sdk-go-v2 tf_aws.signing_region="" tf_backend.operation=Configure tf_backend.req_id=2062a45f-3b1b-cfde-969b-9a2d1f6f933f tf_backend.s3.bucket=terraformperi tf_backend.s3.path=terraform-hd http.response_content_length=404 http.response.header.x_amzn_requestid=7390dee0-192c-49d0-b9c8-de269188c61e http.response.header.content_type=text/xml http.response.header.date="Sat, 09 Mar 2024 10:08:01 GMT"
+  http.response.body=
+  | <GetCallerIdentityResponse xmlns="https://sts.amazonaws.com/doc/2011-06-15/">
+  |   <GetCallerIdentityResult>
+  |     <Arn>arn:aws:iam::111188808406:user/OvaAdan</Arn>
+  |     <UserId>AIDA*************2FTB</UserId>
+  |     <Account>111188808406</Account>
+  |   </GetCallerIdentityResult>
+  |   <ResponseMetadata>
+  |     <RequestId>7390dee0-192c-49d0-b9c8-de269188c61e</RequestId>
+  |   </ResponseMetadata>
+  | </GetCallerIdentityResponse>
+   http.duration=554 http.status_code=200
+2024-03-09T02:08:02.760-0800 [INFO]  backend-s3.aws-base: Retrieved caller identity from STS: tf_backend.operation=Configure tf_backend.req_id=2062a45f-3b1b-cfde-969b-9a2d1f6f933f tf_backend.s3.bucket=terraformperi tf_backend.s3.path=terraform-hd
+2024-03-09T02:08:02.760-0800 [DEBUG] backend-s3.aws-base: Retrieving caller identity from STS: tf_backend.operation=Configure tf_backend.req_id=2062a45f-3b1b-cfde-969b-9a2d1f6f933f tf_backend.s3.bucket=terraformperi tf_backend.s3.path=terraform-hd
+2024-03-09T02:08:02.761-0800 [DEBUG] backend-s3.aws-base: HTTP Request Sent: aws.region=us-east-1 rpc.method=GetCallerIdentity rpc.service=STS rpc.system=aws-api tf_aws.sdk=aws-sdk-go-v2 tf_aws.signing_region="" tf_backend.operation=Configure tf_backend.req_id=2062a45f-3b1b-cfde-969b-9a2d1f6f933f tf_backend.s3.bucket=terraformperi tf_backend.s3.path=terraform-hd http.request_content_length=43 http.request.header.authorization="AWS4-HMAC-SHA256 Credential=AKIA************EVXE/20240309/us-east-1/sts/aws4_request, SignedHeaders=amz-sdk-invocation-id;content-length;content-type;host;x-amz-date, Signature=*****" http.request.header.amz_sdk_request="attempt=1; max=5" http.request.header.content_type=application/x-www-form-urlencoded http.request.header.amz_sdk_invocation_id=4f357c53-0d10-4f91-8067-cc8825740589
+  http.request.body=
+  | Action=GetCallerIdentity&Version=2011-06-15
+   http.url=https://sts.us-east-1.amazonaws.com/ http.user_agent="APN/1.0 HashiCorp/1.0 Terraform/1.7.4 (+https://www.terraform.io) aws-sdk-go-v2/1.24.0 os/macos lang/go#1.21.5 md/GOOS#darwin md/GOARCH#arm64 api/sts#1.26.5" http.request.header.x_amz_date=20240309T100802Z http.method=POST net.peer.name=sts.us-east-1.amazonaws.com
+2024-03-09T02:08:03.113-0800 [DEBUG] backend-s3.aws-base: HTTP Response Received: aws.region=us-east-1 rpc.method=GetCallerIdentity rpc.service=STS rpc.system=aws-api tf_aws.sdk=aws-sdk-go-v2 tf_aws.signing_region="" tf_backend.operation=Configure tf_backend.req_id=2062a45f-3b1b-cfde-969b-9a2d1f6f933f tf_backend.s3.bucket=terraformperi tf_backend.s3.path=terraform-hd http.response.header.content_type=text/xml
+  http.response.body=
+  | <GetCallerIdentityResponse xmlns="https://sts.amazonaws.com/doc/2011-06-15/">
+  |   <GetCallerIdentityResult>
+  |     <Arn>arn:aws:iam::111188808406:user/OvaAdan</Arn>
+  |     <UserId>AIDA*************2FTB</UserId>
+  |     <Account>111188808406</Account>
+  |   </GetCallerIdentityResult>
+  |   <ResponseMetadata>
+  |     <RequestId>c3714fb5-2c76-45cb-aeda-266c047970ff</RequestId>
+  |   </ResponseMetadata>
+  | </GetCallerIdentityResponse>
+   http.duration=352 http.status_code=200 http.response_content_length=404 http.response.header.date="Sat, 09 Mar 2024 10:08:02 GMT" http.response.header.x_amzn_requestid=c3714fb5-2c76-45cb-aeda-266c047970ff
+2024-03-09T02:08:03.114-0800 [INFO]  backend-s3.aws-base: Retrieved caller identity from STS: tf_backend.operation=Configure tf_backend.req_id=2062a45f-3b1b-cfde-969b-9a2d1f6f933f tf_backend.s3.bucket=terraformperi tf_backend.s3.path=terraform-hd
+2024-03-09T02:08:03.521-0800 [DEBUG] checking for provisioner in "."
+2024-03-09T02:08:03.521-0800 [DEBUG] checking for provisioner in "/opt/homebrew/bin"
+2024-03-09T02:08:03.521-0800 [INFO]  backend/local: starting Apply operation
+2024-03-09T02:08:03.522-0800 [DEBUG] backend-s3: HTTP Request Sent: aws.region=us-east-1 aws.s3.bucket=terraformperi rpc.method=ListObjectsV2 rpc.service=S3 rpc.system=aws-api tf_aws.sdk=aws-sdk-go-v2 tf_aws.signing_region="" tf_backend.operation=Workspaces tf_backend.req_id=af910903-ea08-9aa3-434c-fc81dd2b1ccb tf_backend.s3.bucket=terraformperi tf_backend.workspace-prefix=env:/ net.peer.name=terraformperi.s3.us-east-1.amazonaws.com http.user_agent="APN/1.0 HashiCorp/1.0 Terraform/1.7.4 (+https://www.terraform.io) aws-sdk-go-v2/1.24.0 os/macos lang/go#1.21.5 md/GOOS#darwin md/GOARCH#arm64 api/s3#1.47.5" http.request.body="" http.method=GET http.url="https://terraformperi.s3.us-east-1.amazonaws.com/?list-type=2&max-keys=1000&prefix=env%3A%2F" http.request.header.authorization="AWS4-HMAC-SHA256 Credential=AKIA************EVXE/20240309/us-east-1/s3/aws4_request, SignedHeaders=accept-encoding;amz-sdk-invocation-id;host;x-amz-content-sha256;x-amz-date, Signature=*****" http.request.header.accept_encoding=identity http.request.header.x_amz_content_sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 http.request.header.x_amz_date=20240309T100803Z http.request.header.amz_sdk_invocation_id=2e41004d-c7c0-4ab9-be64-0dbc77d26d7d http.request.header.amz_sdk_request="attempt=1; max=5"
+2024-03-09T02:08:04.121-0800 [DEBUG] backend-s3: HTTP Response Received: aws.region=us-east-1 aws.s3.bucket=terraformperi rpc.method=ListObjectsV2 rpc.service=S3 rpc.system=aws-api tf_aws.sdk=aws-sdk-go-v2 tf_aws.signing_region="" tf_backend.operation=Workspaces tf_backend.req_id=af910903-ea08-9aa3-434c-fc81dd2b1ccb tf_backend.s3.bucket=terraformperi tf_backend.workspace-prefix=env:/ http.response.header.server=AmazonS3 http.response.header.x_amz_id_2="n97PBZNOrxz+83BoJnPPbe3urCsI+vt28lQFeRI4YxOh0TYUU++24S2hFkwYUkx7mJkdMkKz2jg=" http.status_code=200 http.response.header.date="Sat, 09 Mar 2024 10:08:05 GMT" http.response.header.x_amz_bucket_region=us-east-1
+  http.response.body=
+  | <?xml version="1.0" encoding="UTF-8"?>
+  | <ListBucketResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/"><Name>terraformperi</Name><Prefix>env:/</Prefix><KeyCount>1</KeyCount><MaxKeys>1000</MaxKeys><IsTruncated>false</IsTruncated><Contents><Key>env:/dev/terraform-hd</Key><LastModified>2024-03-09T09:42:06.000Z</LastModified><ETag>&quot;5595702a59a90f5617be14b70241ea3b&quot;</ETag><ChecksumAlgorithm>SHA256</ChecksumAlgorithm><Size>68781</Size><StorageClass>STANDARD</StorageClass></Contents></ListBucketResult>
+   http.duration=597 http.response.header.x_amz_request_id=PCDX5TZ66VQGDSGX http.response.header.content_type=application/xml
+2024-03-09T02:08:04.121-0800 [INFO]  backend-s3: Downloading remote state: tf_backend.operation=Get tf_backend.req_id=85d5a55e-fafb-5a32-3927-7e0907d29f98 tf_backend.s3.bucket=terraformperi tf_backend.s3.path=env:/dev/terraform-hd
+2024-03-09T02:08:04.122-0800 [DEBUG] backend-s3: HTTP Request Sent: aws.region=us-east-1 aws.s3.bucket=terraformperi aws.s3.key=env:/dev/terraform-hd rpc.method=HeadObject rpc.service=S3 rpc.system=aws-api tf_aws.sdk=aws-sdk-go-v2 tf_aws.signing_region="" tf_backend.operation=Get tf_backend.req_id=85d5a55e-fafb-5a32-3927-7e0907d29f98 tf_backend.s3.bucket=terraformperi tf_backend.s3.path=env:/dev/terraform-hd http.method=HEAD http.url="https://terraformperi.s3.us-east-1.amazonaws.com/env%3A/dev/terraform-hd" net.peer.name=terraformperi.s3.us-east-1.amazonaws.com http.request.header.authorization="AWS4-HMAC-SHA256 Credential=AKIA************EVXE/20240309/us-east-1/s3/aws4_request, SignedHeaders=accept-encoding;amz-sdk-invocation-id;host;x-amz-content-sha256;x-amz-date, Signature=*****" http.request.header.accept_encoding=identity http.request.header.amz_sdk_request="attempt=1; max=5" http.user_agent="APN/1.0 HashiCorp/1.0 Terraform/1.7.4 (+https://www.terraform.io) aws-sdk-go-v2/1.24.0 os/macos lang/go#1.21.5 md/GOOS#darwin md/GOARCH#arm64 api/s3#1.47.5" http.request.header.x_amz_content_sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 http.request.header.x_amz_date=20240309T100804Z http.request.header.amz_sdk_invocation_id=340faf9d-e8f0-431b-91d9-c23c571c94ab http.request.body=""
+2024-03-09T02:08:04.209-0800 [DEBUG] backend-s3: HTTP Response Received: aws.region=us-east-1 aws.s3.bucket=terraformperi aws.s3.key=env:/dev/terraform-hd rpc.method=HeadObject rpc.service=S3 rpc.system=aws-api tf_aws.sdk=aws-sdk-go-v2 tf_aws.signing_region="" tf_backend.operation=Get tf_backend.req_id=85d5a55e-fafb-5a32-3927-7e0907d29f98 tf_backend.s3.bucket=terraformperi tf_backend.s3.path=env:/dev/terraform-hd http.duration=86 http.response.header.content_type=application/json http.response.header.x_amz_id_2="EMEbiC2PYdr8X8U6RYcOJlU6PIxaTo73LkOJ+SGIxj3f3eY9pZpNGMNbjFkvQ3G16RGG90iQxDg=" http.response.header.x_amz_server_side_encryption=AES256 http.response.header.last_modified="Sat, 09 Mar 2024 09:42:06 GMT" http.status_code=200 http.response_content_length=68781 http.response.header.date="Sat, 09 Mar 2024 10:08:05 GMT" http.response.header.x_amz_request_id=PCDNZJ34J7CN7SD3 http.response.header.server=AmazonS3 http.response.header.content_encoding="" http.response.body="" http.response.header.accept_ranges=bytes http.response.header.etag="\"5595702a59a90f5617be14b70241ea3b\""
+2024-03-09T02:08:04.209-0800 [DEBUG] backend-s3: HTTP Request Sent: aws.region=us-east-1 aws.s3.bucket=terraformperi aws.s3.key=env:/dev/terraform-hd rpc.method=GetObject rpc.service=S3 rpc.system=aws-api tf_aws.sdk=aws-sdk-go-v2 tf_aws.signing_region="" tf_backend.operation=Get tf_backend.req_id=85d5a55e-fafb-5a32-3927-7e0907d29f98 tf_backend.s3.bucket=terraformperi tf_backend.s3.path=env:/dev/terraform-hd http.request.header.amz_sdk_request="attempt=1; max=5" http.request.header.x_amz_content_sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 http.request.header.x_amz_date=20240309T100804Z http.request.body="" http.url="https://terraformperi.s3.us-east-1.amazonaws.com/env%3A/dev/terraform-hd?x-id=GetObject" net.peer.name=terraformperi.s3.us-east-1.amazonaws.com http.request.header.accept_encoding=identity http.request.header.range=bytes=0-5242879 http.request.header.amz_sdk_invocation_id=9931dae9-ce86-431a-8e50-a9c632c939e6 http.method=GET http.user_agent="APN/1.0 HashiCorp/1.0 Terraform/1.7.4 (+https://www.terraform.io) aws-sdk-go-v2/1.24.0 os/macos lang/go#1.21.5 md/GOOS#darwin md/GOARCH#arm64 api/s3#1.47.5 ft/s3-transfer" http.request.header.authorization="AWS4-HMAC-SHA256 Credential=AKIA************EVXE/20240309/us-east-1/s3/aws4_request, SignedHeaders=accept-encoding;amz-sdk-invocation-id;host;range;x-amz-content-sha256;x-amz-date, Signature=*****"
+2024-03-09T02:08:04.318-0800 [DEBUG] backend-s3: HTTP Response Received: aws.region=us-east-1 aws.s3.bucket=terraformperi aws.s3.key=env:/dev/terraform-hd rpc.method=GetObject rpc.service=S3 rpc.system=aws-api tf_aws.sdk=aws-sdk-go-v2 tf_aws.signing_region="" tf_backend.operation=Get tf_backend.req_id=85d5a55e-fafb-5a32-3927-7e0907d29f98 tf_backend.s3.bucket=terraformperi tf_backend.s3.path=env:/dev/terraform-hd http.duration=108 http.response.header.content_type=application/json http.response.header.x_amz_id_2="0RJS8+tOb40mnRJTG8KF0Jl2RoKRfCFDz5GC/IOAyO5lozJJj3KBLWdvaGw2lwJVuKGksrpveD8=" http.response.header.content_range="bytes 0-68780/68781" http.response_content_length=68781 http.response.header.server=AmazonS3 http.response.header.content_encoding="" http.status_code=206 http.response.header.x_amz_server_side_encryption=AES256 http.response.header.last_modified="Sat, 09 Mar 2024 09:42:06 GMT" http.response.header.etag="\"5595702a59a90f5617be14b70241ea3b\"" http.response.header.accept_ranges=bytes http.response.header.x_amz_request_id=PCDZ0MQZHNVDGNVE http.response.header.date="Sat, 09 Mar 2024 10:08:05 GMT" http.response.body="[Redacted: 67.2 KB (68,781 bytes), Type: application/json]"
+2024-03-09T02:08:04.426-0800 [DEBUG] backend/local: will prompt for input of unset required variables [subject_alternative_names domain_name rds_sg_rules create_attach_igw natgw_tag subnet_for_each ec2_sg_rules instance_type alb_sg_rules cidr_block vpc_tag]
+2024-03-09T02:08:04.426-0800 [DEBUG] command: asking for input: "var.alb_sg_rules"
+[0m[1mvar.alb_sg_rules[0m
+  [1mEnter a value:[0m [0m2024-03-09T02:44:38.500-0800 [ERROR] UIInput scan err: read /dev/stdin: input/output error
+2024-03-09T02:44:38.503-0800 [WARN]  backend/local: Failed to request user input for variable "alb_sg_rules": read /dev/stdin: input/output error
+2024-03-09T02:44:38.503-0800 [DEBUG] command: asking for input: "var.cidr_block"
+[0m[1mvar.cidr_block[0m
+  [1mEnter a value:[0m [0m2024-03-09T02:44:38.504-0800 [ERROR] UIInput scan err: read /dev/stdin: input/output error
+2024-03-09T02:44:38.504-0800 [WARN]  backend/local: Failed to request user input for variable "cidr_block": read /dev/stdin: input/output error
+2024-03-09T02:44:38.504-0800 [DEBUG] command: asking for input: "var.create_attach_igw"
+[0m[1mvar.create_attach_igw[0m
+  [1mEnter a value:[0m [0m2024-03-09T02:44:38.504-0800 [ERROR] UIInput scan err: read /dev/stdin: input/output error
+2024-03-09T02:44:38.504-0800 [WARN]  backend/local: Failed to request user input for variable "create_attach_igw": read /dev/stdin: input/output error
+2024-03-09T02:44:38.504-0800 [DEBUG] command: asking for input: "var.domain_name"
+[0m[1mvar.domain_name[0m
+  [1mEnter a value:[0m [0m2024-03-09T02:44:38.504-0800 [ERROR] UIInput scan err: read /dev/stdin: input/output error
+2024-03-09T02:44:38.504-0800 [WARN]  backend/local: Failed to request user input for variable "domain_name": read /dev/stdin: input/output error
+2024-03-09T02:44:38.504-0800 [DEBUG] command: asking for input: "var.ec2_sg_rules"
+[0m[1mvar.ec2_sg_rules[0m
+  [1mEnter a value:[0m [0m2024-03-09T02:44:38.504-0800 [ERROR] UIInput scan err: read /dev/stdin: input/output error
+2024-03-09T02:44:38.504-0800 [WARN]  backend/local: Failed to request user input for variable "ec2_sg_rules": read /dev/stdin: input/output error
+2024-03-09T02:44:38.504-0800 [DEBUG] command: asking for input: "var.instance_type"
+[0m[1mvar.instance_type[0m
+  [1mEnter a value:[0m [0m2024-03-09T02:44:38.504-0800 [ERROR] UIInput scan err: read /dev/stdin: input/output error
+2024-03-09T02:44:38.504-0800 [WARN]  backend/local: Failed to request user input for variable "instance_type": read /dev/stdin: input/output error
+2024-03-09T02:44:38.504-0800 [DEBUG] command: asking for input: "var.natgw_tag"
+[0m[1mvar.natgw_tag[0m
+  [1mEnter a value:[0m [0m2024-03-09T02:44:38.504-0800 [ERROR] UIInput scan err: read /dev/stdin: input/output error
+2024-03-09T02:44:38.504-0800 [WARN]  backend/local: Failed to request user input for variable "natgw_tag": read /dev/stdin: input/output error
+2024-03-09T02:44:38.504-0800 [DEBUG] command: asking for input: "var.rds_sg_rules"
+[0m[1mvar.rds_sg_rules[0m
+  [1mEnter a value:[0m [0m2024-03-09T02:44:38.504-0800 [ERROR] UIInput scan err: read /dev/stdin: input/output error
+2024-03-09T02:44:38.504-0800 [WARN]  backend/local: Failed to request user input for variable "rds_sg_rules": read /dev/stdin: input/output error
+2024-03-09T02:44:38.504-0800 [DEBUG] command: asking for input: "var.subject_alternative_names"
+[0m[1mvar.subject_alternative_names[0m
+  [1mEnter a value:[0m [0m2024-03-09T02:44:38.504-0800 [ERROR] UIInput scan err: read /dev/stdin: input/output error
+2024-03-09T02:44:38.504-0800 [WARN]  backend/local: Failed to request user input for variable "subject_alternative_names": read /dev/stdin: input/output error
+2024-03-09T02:44:38.504-0800 [DEBUG] command: asking for input: "var.subnet_for_each"
+[0m[1mvar.subnet_for_each[0m
+  [1mEnter a value:[0m [0m2024-03-09T02:44:38.504-0800 [ERROR] UIInput scan err: read /dev/stdin: input/output error
+2024-03-09T02:44:38.504-0800 [WARN]  backend/local: Failed to request user input for variable "subnet_for_each": read /dev/stdin: input/output error
+2024-03-09T02:44:38.504-0800 [DEBUG] command: asking for input: "var.vpc_tag"
+[0m[1mvar.vpc_tag[0m
+  [1mEnter a value:[0m [0m2024-03-09T02:44:38.504-0800 [ERROR] UIInput scan err: read /dev/stdin: input/output error
+2024-03-09T02:44:38.504-0800 [WARN]  backend/local: Failed to request user input for variable "vpc_tag": read /dev/stdin: input/output error
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mNo value for required variable[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on variables.tf line 1:
+[31m│[0m [0m   1: [4mvariable "cidr_block"[0m {[0m
+[31m│[0m [0m
+[31m│[0m [0mThe root module input variable "cidr_block" is not set, and has no default
+[31m│[0m [0mvalue. Use a -var or -var-file command line argument to provide a value for
+[31m│[0m [0mthis variable.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mNo value for required variable[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on variables.tf line 5:
+[31m│[0m [0m   5: [4mvariable "create_attach_igw"[0m {[0m
+[31m│[0m [0m
+[31m│[0m [0mThe root module input variable "create_attach_igw" is not set, and has no
+[31m│[0m [0mdefault value. Use a -var or -var-file command line argument to provide a
+[31m│[0m [0mvalue for this variable.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mNo value for required variable[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on variables.tf line 9:
+[31m│[0m [0m   9: [4mvariable "vpc_tag"[0m {[0m
+[31m│[0m [0m
+[31m│[0m [0mThe root module input variable "vpc_tag" is not set, and has no default
+[31m│[0m [0mvalue. Use a -var or -var-file command line argument to provide a value for
+[31m│[0m [0mthis variable.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mNo value for required variable[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on variables.tf line 13:
+[31m│[0m [0m  13: [4mvariable "subnet_for_each"[0m {[0m
+[31m│[0m [0m
+[31m│[0m [0mThe root module input variable "subnet_for_each" is not set, and has no
+[31m│[0m [0mdefault value. Use a -var or -var-file command line argument to provide a
+[31m│[0m [0mvalue for this variable.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mNo value for required variable[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on variables.tf line 19:
+[31m│[0m [0m  19: [4mvariable "natgw_tag"[0m {[0m
+[31m│[0m [0m
+[31m│[0m [0mThe root module input variable "natgw_tag" is not set, and has no default
+[31m│[0m [0mvalue. Use a -var or -var-file command line argument to provide a value for
+[31m│[0m [0mthis variable.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mNo value for required variable[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on variables.tf line 23:
+[31m│[0m [0m  23: [4mvariable "ec2_sg_rules"[0m {[0m
+[31m│[0m [0m
+[31m│[0m [0mThe root module input variable "ec2_sg_rules" is not set, and has no
+[31m│[0m [0mdefault value. Use a -var or -var-file command line argument to provide a
+[31m│[0m [0mvalue for this variable.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mNo value for required variable[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on variables.tf line 27:
+[31m│[0m [0m  27: [4mvariable "instance_type"[0m {[0m
+[31m│[0m [0m
+[31m│[0m [0mThe root module input variable "instance_type" is not set, and has no
+[31m│[0m [0mdefault value. Use a -var or -var-file command line argument to provide a
+[31m│[0m [0mvalue for this variable.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mNo value for required variable[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on variables.tf line 31:
+[31m│[0m [0m  31: [4mvariable "alb_sg_rules"[0m {[0m
+[31m│[0m [0m
+[31m│[0m [0mThe root module input variable "alb_sg_rules" is not set, and has no
+[31m│[0m [0mdefault value. Use a -var or -var-file command line argument to provide a
+[31m│[0m [0mvalue for this variable.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mNo value for required variable[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on variables.tf line 35:
+[31m│[0m [0m  35: [4mvariable "subject_alternative_names"[0m {[0m
+[31m│[0m [0m
+[31m│[0m [0mThe root module input variable "subject_alternative_names" is not set, and
+[31m│[0m [0mhas no default value. Use a -var or -var-file command line argument to
+[31m│[0m [0mprovide a value for this variable.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mNo value for required variable[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on variables.tf line 39:
+[31m│[0m [0m  39: [4mvariable "domain_name"[0m {[0m
+[31m│[0m [0m
+[31m│[0m [0mThe root module input variable "domain_name" is not set, and has no default
+[31m│[0m [0mvalue. Use a -var or -var-file command line argument to provide a value for
+[31m│[0m [0mthis variable.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mNo value for required variable[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on variables.tf line 43:
+[31m│[0m [0m  43: [4mvariable "rds_sg_rules"[0m {[0m
+[31m│[0m [0m
+[31m│[0m [0mThe root module input variable "rds_sg_rules" is not set, and has no
+[31m│[0m [0mdefault value. Use a -var or -var-file command line argument to provide a
+[31m│[0m [0mvalue for this variable.
+[31m╵[0m[0m
