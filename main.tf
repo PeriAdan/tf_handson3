@@ -158,3 +158,44 @@ module "rds_sg" {
   sg_tag      = "${terraform.workspace}-rds_sg"
   sg_rules    = var.rds_sg_rules
 }
+
+resource "aws_db_subnet_group" "db_subnet_gr" {
+  name = "rds-subnet-target_group_gr"
+  subnet_ids = [
+    module.subnets["private_1a"].id,
+    module.subnets["private_1b"].id
+  ]
+
+  tags = {
+    Name = "MY DB sb gr"
+  }
+}
+
+locals {
+  db_creds = jsondecode(data.aws_secretsmanager_secret_version.creds.secret_string)
+}
+
+data "aws_secretsmanager_secret_version" "creds" {
+  secret_id = "rds-creds"
+
+}
+
+resource "aws_db_instance" "db" {
+  allocated_storage           = "20"
+  allow_major_version_upgrade = false
+  auto_minor_version_upgrade  = false
+  apply_immediately           = false
+  db_subnet_group_name        = aws_db_subnet_group.db_subnet_gr.name
+  engine                      = "mysql"
+  engine_version              = "5.7.44"
+  instance_class              = "db.t2.micro"
+  multi_az                    = false
+  db_name                     = "pracdb"
+  username                    = local.db_creds.USERNAME
+  password                    = local.db_creds.PASSWORD
+  publicly_accessible         = false
+  skip_final_snapshot         = true
+  storage_encrypted           = false
+  storage_type                = "standard"
+  vpc_security_group_ids      = [module.rds_sg.id]
+}

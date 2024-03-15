@@ -15,7 +15,7 @@ natgw_tag = "dev_natgtw"
 
 ec2_sg_rules = {
   SSH_from_www   = ["ingress", 22, 22, "TCP", "0.0.0.0/0"]
-  http_from_www  = ["ingress", 80, 80, "tcp", "sg-02bbedd769472bea0"]
+  http_from_www  = ["ingress", 80, 80, "tcp", "sg-08e982c703eb8ae6f"]
   traffic_to_www = ["egress", 0, 0, "-1", "0.0.0.0/0"]
 }
 
